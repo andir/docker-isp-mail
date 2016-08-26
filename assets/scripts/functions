@@ -13,6 +13,7 @@ FILE_POSTFIX_DATABASE_MAIL_MAIL="/etc/postfix/database_email2email.cf"
 FILE_DOVECOT_CONF_MAIL="/etc/dovecot/conf.d/10-mail.conf"
 FILE_DOVECOT_CONF_SSL="/etc/dovecot/conf.d/10-ssl.conf"
 FILE_DOVECOT_CONF_LDA="/etc/dovecot/conf.d/15-lda.conf"
+FILE_DOVECOT_CONF_ACL="/etc/dovecot/conf.d/20-acl.conf"
 FILE_DOVECOT_CONF_SQL="/etc/dovecot/dovecot-sql.conf.ext"
 
 
@@ -168,6 +169,7 @@ configure_dovecot() {
   update_template ${FILE_DOVECOT_CONF_MAIL} MAIL_DIR
   update_template ${FILE_DOVECOT_CONF_SSL} SSL_KEY_PATH SSL_CERT_PATH SSL_DH_PARAM_LENGTH
   update_template ${FILE_DOVECOT_CONF_LDA} POSTMASTER_ADDRESS
+  update_template ${FILE_DOVECOT_CONF_ACP} MAIL_DIR
 
   update_template ${FILE_DOVECOT_CONF_SQL} \
     DB_DRIVER \
